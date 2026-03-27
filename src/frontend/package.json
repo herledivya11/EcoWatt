@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite",
     "build:skip-bindings": "vite build && pnpm copy:env",
     "build": "vite build && pnpm copy:env",
-    "copy:env": "cp env.json dist/",
+    "preview": "vite preview",
+    "copy:env": "node ../../scripts/copy-env-json.js",
     "typecheck": "tsc --noEmit --incremental --tsBuildInfoFile node_modules/.cache/tsconfig.tsbuildinfo --pretty",
     "check": "biome check src",
     "fix": "biome check --write src"
@@ -20,6 +22,7 @@
     "@types/three": "0.176.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "baseline-browser-mapping": "latest",
     "dotenv": "^16.5.0",
     "dotenv-cli": "^8.0.0",
     "postcss": "^8.4.41",

@@ -1,4 +1,5 @@
 packages:
-  - src/**/*
+  - src/frontend
+  - src/frontend/**
 onlyBuiltDependencies:
   - esbuild

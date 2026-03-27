@@ -12,8 +12,9 @@ process.env.II_URL = process.env.II_URL || ii_url;
 process.env.STORAGE_GATEWAY_URL =
   process.env.STORAGE_GATEWAY_URL || "https://blob.caffeine.ai";
 
-export default defineConfig({
-  logLevel: "error",
+export default defineConfig(({ command }) => ({
+  // Keep builds quiet, but show the dev-server URL when running `vite`.
+  logLevel: command === "serve" ? "info" : "error",
   build: {
     emptyOutDir: true,
     sourcemap: false,
@@ -57,4 +58,4 @@ export default defineConfig({
     ],
     dedupe: ["@dfinity/agent"],
   },
-});
+}));

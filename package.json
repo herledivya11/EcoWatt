@@ -7,6 +7,8 @@
     "npm": "please use pnpm"
   },
   "scripts": {
+    "dev": "pnpm -C src/frontend dev",
+    "preview": "pnpm -C src/frontend preview",
     "build": "pnpm -r --if-present run build",
     "typecheck": "pnpm -r --if-present run typecheck",
     "check": "pnpm -r --if-present run check",
